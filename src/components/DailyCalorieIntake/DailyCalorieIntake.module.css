@@ -1,0 +1,39 @@
+.container {
+    position: relative;
+    padding: 20px;
+  }
+  
+  .closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    display: none;
+  }
+  
+  .closeButton:hover {
+    color: #fc842d;
+  }
+  
+  .foodList {
+    margin-top: 20px;
+  }
+  
+  .btn {
+    margin-top: 20px;
+    background-color: #fc842d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: #e67320;
+  }
+  

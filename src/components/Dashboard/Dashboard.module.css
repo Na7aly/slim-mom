@@ -1,0 +1,83 @@
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #ffffff; 
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .logoImage {
+    height: 50px;
+  }
+  
+  .nav {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    margin-top: 30px;
+    text-transform: uppercase;
+  }
+  
+  .navItem {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #9B9FAA;
+    font-size: 18px;
+    transition: color 0.3s ease;
+  }
+  
+  .navItem:hover {
+    color: #212121;
+  }
+  
+  .userSection {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-top: 30px;
+  }
+  
+  .userName {
+    color: #9B9FAA;
+    margin-right: 20px;
+    font-size: 18px;
+    transition: color 0.3s ease;
+  }
+  
+  .userName:hover {
+    color: #212121;
+  }
+  
+  .logoutText {
+    color: #9B9FAA;
+    font-size: 18px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .logoutText:hover {
+    color: #212121;
+  }
+  
+  .content {
+    
+  }
+  
+  .left-side {
+    flex: 3; 
+    background-color: #ffffff; 
+    padding: 20px;
+  }
+  
+  .right-side {
+    flex: 2; 
+    background-color: #f0f0f0; 
+    padding: 20px;
+  }
+  

@@ -1,0 +1,122 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  width: 608px;
+  height: 343px;
+  top: 293px;
+  left: 16px;
+  gap: 0px;
+  border: 1px solid transparent; 
+}
+
+.title {
+  margin-bottom: 20px;
+}
+
+.title h1 {
+  color: #212121;
+  font-family: Verdana;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 47.6px;
+  text-align: left;
+}
+
+.subtitle {
+  color: #666;
+  font-family: Verdana;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: left;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 20px;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.formSection {
+  display: flex;
+  gap: 20px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup label {
+  font-family: Verdana;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 17.01px;
+  letter-spacing: 0.04em;
+  color: #9B9FAA;
+}
+
+.formGroup input {
+  padding: 8px;
+  font-size: 14px;
+}
+
+.bloodTypeContainer {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.bloodTypeContainer label {
+  font-family: Verdana;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 17.01px;
+  letter-spacing: 0.04em;
+  color: black;
+}
+
+.bloodTypeContainer input[type="radio"] {
+  accent-color: #fc842d; 
+}
+
+.bloodTypeContainer input[type="radio"]:checked {
+  background-color: #fc842d; 
+}
+
+.btn {
+  width: 210px;
+  height: 43px;
+  padding: 13px 25px;
+  background-color: white;
+  color: #fc842d;
+  border: 1px solid #fc842d;
+  border-radius: 30px;
+  cursor: pointer;
+  opacity: 0.9;
+  margin-top: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+.btn:hover {
+  background-color: #fc842d;
+  color: white;
+}
+
+.bloodTypeContainer input:checked + label {
+  color: #fc842d; 
+}
+
+/* body {
+  background-color: rgb(246, 246, 246);
+} */
