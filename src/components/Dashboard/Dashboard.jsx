@@ -3,12 +3,11 @@ import { Link, Route, Routes, useNavigate } from 'react-router-dom';
 import Diary from '../Diary/Diary';
 import Calculate from '../Calculate/Calculate';
 import logoImage from '../../img/logo (1).png';
-import styles from './Dashboard.module.css'; 
+import styles from './Dashboard.module.css';
 
 const Dashboard = () => {
   const [userName, setUserName] = useState('');
-  const [ setTotalCalories] = useState(0);
-  // Remove dailyRate, setDailyRate, notRecommendedFoods, setCurrentDate if not used
+  const [totalCalories, setTotalCalories] = useState(0); // Correct destructuring of useState
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -30,8 +29,7 @@ const Dashboard = () => {
 
             if (responseData.ok) {
               const summaryData = await responseData.json();
-              setTotalCalories(summaryData.totalCalories);
-              // Remove setNotRecommendedFoods if not used
+              setTotalCalories(summaryData.totalCalories); // Use setTotalCalories correctly
             } else {
               console.error('Failed to fetch daily summary');
             }
@@ -49,7 +47,7 @@ const Dashboard = () => {
     };
 
     fetchUserData();
-  }, [navigate]);
+  }, [navigate, setTotalCalories]); // Add setTotalCalories to dependencies
 
   const handleLogout = () => {
     localStorage.removeItem('token');
@@ -76,7 +74,7 @@ const Dashboard = () => {
 
       <main className={styles.content}>
         <Routes>
-          <Route path="/" element={<Calculate />} /> 
+          <Route path="/" element={<Calculate />} />
           <Route path="diary" element={<Diary />} />
           <Route path="calculate" element={<Calculate />} />
         </Routes>
