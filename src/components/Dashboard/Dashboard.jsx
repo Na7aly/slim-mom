@@ -3,15 +3,12 @@ import { Link, Route, Routes, useNavigate } from 'react-router-dom';
 import Diary from '../Diary/Diary';
 import Calculate from '../Calculate/Calculate';
 import logoImage from '../../img/logo (1).png';
-import Summary from '../Summary/Summary'; 
 import styles from './Dashboard.module.css'; 
 
 const Dashboard = () => {
   const [userName, setUserName] = useState('');
   const [totalCalories, setTotalCalories] = useState(0);
-  const [dailyRate, setDailyRate] = useState(2800); 
-  const [notRecommendedFoods, setNotRecommendedFoods] = useState([]);
-  const [currentDate, setCurrentDate] = useState(new Date().toLocaleDateString()); 
+  // Remove dailyRate, setDailyRate, notRecommendedFoods, setCurrentDate if not used
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -26,15 +23,15 @@ const Dashboard = () => {
           if (response.ok) {
             const data = await response.json();
             setUserName(data.name);
-           
-            const responseData = await fetch(`http://localhost:5000/api/daily-summary?date=${currentDate}`, {
+
+            const responseData = await fetch(`http://localhost:5000/api/daily-summary`, {
               headers: { Authorization: `Bearer ${token}` },
             });
 
             if (responseData.ok) {
               const summaryData = await responseData.json();
               setTotalCalories(summaryData.totalCalories);
-              setNotRecommendedFoods(summaryData.notRecommendedFoods);
+              // Remove setNotRecommendedFoods if not used
             } else {
               console.error('Failed to fetch daily summary');
             }
@@ -52,7 +49,7 @@ const Dashboard = () => {
     };
 
     fetchUserData();
-  }, [navigate, currentDate]);
+  }, [navigate]);
 
   const handleLogout = () => {
     localStorage.removeItem('token');
@@ -61,7 +58,6 @@ const Dashboard = () => {
 
   return (
     <div className={styles.dashboard}>
-      
       <header className={styles.header}>
         <div className={styles.logo}>
           <img src={logoImage} alt="Logo" className={styles.logoImage} />
@@ -78,20 +74,12 @@ const Dashboard = () => {
         </div>
       </header>
 
-    
       <main className={styles.content}>
         <Routes>
           <Route path="/" element={<Calculate />} /> 
           <Route path="diary" element={<Diary />} />
           <Route path="calculate" element={<Calculate />} />
         </Routes>
-
-        {/* Render the Summary component with current date */}
-        {/* <Summary
-          totalCalories={totalCalories}
-          dailyRate={dailyRate}
-          notRecommendedFoods={notRecommendedFoods}
-        /> */}
       </main>
     </div>
   );

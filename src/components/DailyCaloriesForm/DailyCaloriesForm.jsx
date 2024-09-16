@@ -4,10 +4,10 @@ import DailyCalorieIntake from '../DailyCalorieIntake/DailyCalorieIntake';
 import styles from './DailyCaloriesForm.module.css';
 import Header from '../Header/Header';
 
-// Import the images
-import bananaImg from '../../img/Layer-9.png';  // Adjust the path as necessary
-import strawberryImg from '../../img/Strawberry-Big-PNG.png';  // Adjust the path as necessary
-import paletteImg from '../../img/Vector 3.png';  // Adjust the path as necessary
+
+// import bananaImg from '../../img/Layer-9.png';  
+// import strawberryImg from '../../img/Strawberry-Big-PNG.png';  
+// import paletteImg from '../../img/Vector 3.png';  
 
 function DailyCaloriesForm({ products }) {
   const [height, setHeight] = useState('');
