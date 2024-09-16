@@ -65,7 +65,6 @@ const Diary = () => {
         grams: gramsValue,
         caloriesPer100g: selectedProduct.calories,
         calories: Math.round((gramsValue * selectedProduct.calories) / 100),
-        selected: false,
       };
       const updatedProducts = [...products, newProduct];
 
@@ -105,25 +104,8 @@ const Diary = () => {
     }));
   };
 
-  const handleProductSelect = (index) => {
-    const updatedProducts = [...products];
-    updatedProducts[index].selected = !updatedProducts[index].selected;
-
-    setDailyProducts((prevDailyProducts) => ({
-      ...prevDailyProducts,
-      [formatDate(startDate)]: updatedProducts,
-    }));
-  };
-
   const calculateTotalCalories = () => {
     return products.reduce((total, product) => total + product.calories, 0);
-  };
-
-  const calculateSelectedCalories = () => {
-    return products.reduce(
-      (total, product) => (product.selected ? total + product.calories : total),
-      0
-    );
   };
 
   const calculateDailyRate = () => {
@@ -131,7 +113,7 @@ const Diary = () => {
   };
 
   const calculatePercentOfNormal = () => {
-    return (calculateSelectedCalories() / calculateDailyRate()) * 100;
+    return (calculateTotalCalories() / calculateDailyRate()) * 100;
   };
 
   const handleDateChange = (date) => {

@@ -7,7 +7,7 @@ import styles from './Dashboard.module.css';
 
 const Dashboard = () => {
   const [userName, setUserName] = useState('');
-  const [totalCalories, setTotalCalories] = useState(0);
+  const [ setTotalCalories] = useState(0);
   // Remove dailyRate, setDailyRate, notRecommendedFoods, setCurrentDate if not used
   const navigate = useNavigate();
 
