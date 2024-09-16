@@ -7,7 +7,7 @@ import styles from './Dashboard.module.css';
 
 const Dashboard = () => {
   const [userName, setUserName] = useState('');
-  const [totalCalories, setTotalCalories] = useState(0); // Correct destructuring of useState
+  const [totalCalories, setTotalCalories] = useState(0); // Correct destructuring
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -29,7 +29,7 @@ const Dashboard = () => {
 
             if (responseData.ok) {
               const summaryData = await responseData.json();
-              setTotalCalories(summaryData.totalCalories); // Use setTotalCalories correctly
+              setTotalCalories(summaryData.totalCalories); // Correctly setting totalCalories
             } else {
               console.error('Failed to fetch daily summary');
             }
@@ -47,7 +47,7 @@ const Dashboard = () => {
     };
 
     fetchUserData();
-  }, [navigate, setTotalCalories]); // Add setTotalCalories to dependencies
+  }, [navigate, setTotalCalories]);
 
   const handleLogout = () => {
     localStorage.removeItem('token');
@@ -78,6 +78,11 @@ const Dashboard = () => {
           <Route path="diary" element={<Diary />} />
           <Route path="calculate" element={<Calculate />} />
         </Routes>
+
+        {/* Display totalCalories in the UI */}
+        <div className={styles.caloriesInfo}>
+          <p>Total Calories: {totalCalories}</p>
+        </div>
       </main>
     </div>
   );
