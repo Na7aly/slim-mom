@@ -28,6 +28,7 @@ function App() {
     <Router>
       <div className="app">
         <Routes>
+        <Route path="/slim-mom/" element={<DailyCaloriesForm />} />
           <Route path="/" element={<DailyCaloriesForm />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/registration" element={<RegistrationPage />} />
