@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom'; // Importă Link
 import styles from './Header.module.css';
-import logoImage from '../../img/logo (1).png'; 
+import logoImage from '../../img/logo (1).png';
 
 function Header() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -48,8 +48,8 @@ function Header() {
         </div>
       ) : (
         <nav className={styles.navigation}>
-          <a href="/login">LOG IN</a>
-          <a href="/registration">REGISTRATION</a>
+          <Link to="/login">LOG IN</Link> {}
+          <Link to="/registration">REGISTRATION</Link> {}
         </nav>
       )}
     </header>

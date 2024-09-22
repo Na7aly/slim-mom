@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { FaCalendarAlt, FaPlus, FaTimes } from 'react-icons/fa';
-import productData from '../../data/products.json'; // Importing the JSON file
-import styles from './Diary.module.css'; // Importing your CSS
+import productData from '../../data/products.json'; 
+import styles from './Diary.module.css'; 
 
 const Diary = () => {
   const [startDate, setStartDate] = useState(new Date());
@@ -14,7 +14,6 @@ const Diary = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [grams, setGrams] = useState('');
 
-  // Retrieve the data from localStorage on component mount
   useEffect(() => {
     const storedProducts = localStorage.getItem('dailyProducts');
     if (storedProducts) {
@@ -22,16 +21,16 @@ const Diary = () => {
     }
   }, []);
 
-  // Save the data to localStorage every time dailyProducts changes
+ 
   useEffect(() => {
     localStorage.setItem('dailyProducts', JSON.stringify(dailyProducts));
   }, [dailyProducts]);
 
   const formatDate = (date) => {
-    return date.toISOString().split('T')[0]; // Formats date as 'YYYY-MM-DD'
+    return date.toISOString().split('T')[0]; 
   };
 
-  // Get products for the current date
+  
   const products = dailyProducts[formatDate(startDate)] || [];
 
   const toggleCalendar = () => {

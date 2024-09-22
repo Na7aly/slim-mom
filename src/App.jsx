@@ -30,8 +30,8 @@ function App() {
         <Routes>
         <Route path="/slim-mom/" element={<DailyCaloriesForm />} />
           <Route path="/" element={<DailyCaloriesForm />} />
-          <Route path="/slim-mom/login" element={<LoginPage />} />
-          <Route path="/slim-mom/registration" element={<RegistrationPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/registration" element={<RegistrationPage />} />
           <Route path="/dashboard/*" element={<Dashboard />}>
             <Route 
               path="diary" 
